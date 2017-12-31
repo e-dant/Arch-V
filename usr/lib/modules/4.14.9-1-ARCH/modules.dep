@@ -3921,4 +3921,4 @@ kernel/lib/asn1_decoder.ko.xz:
 kernel/lib/oid_registry.ko.xz:
 kernel/lib/parman.ko.xz:
 kernel/virt/lib/irqbypass.ko.xz:
-kernel/drivers/net/wireless/wl.ko: kernel/net/wireless/cfg80211.ko.xz kernel/net/rfkill/rfkill.ko.xz
+extramodules/wl.ko.gz: kernel/net/wireless/cfg80211.ko.xz kernel/net/rfkill/rfkill.ko.xz

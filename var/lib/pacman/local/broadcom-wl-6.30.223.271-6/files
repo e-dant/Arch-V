@@ -1,0 +1,13 @@
+%FILES%
+usr/
+usr/lib/
+usr/lib/modprobe.d/
+usr/lib/modprobe.d/broadcom-wl.conf
+usr/lib/modules/
+usr/lib/modules/extramodules-4.14-ARCH/
+usr/lib/modules/extramodules-4.14-ARCH/wl.ko.gz
+usr/share/
+usr/share/licenses/
+usr/share/licenses/broadcom-wl/
+usr/share/licenses/broadcom-wl/LICENSE
+

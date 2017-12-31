@@ -346,3 +346,20 @@
 [2017-12-31 13:30] [PACMAN] Running 'pacman -U .'
 [2017-12-31 13:30] [PACMAN] Running 'pacman -U .INSTALL'
 [2017-12-31 13:31] [PACMAN] Running 'pacman -U broadcom-wl-6.30.223.271-6-x86_64.pkg.tar.xz'
+[2017-12-31 13:44] [PACMAN] Running 'pacman -U broadcom-wl'
+[2017-12-31 13:44] [PACMAN] Running 'pacman -U broadcom-wl/broadcom-wl-6.30.223.271-6-x86_64.pkg.tar.xz'
+[2017-12-31 13:44] [ALPM] running '70-dkms-remove.hook'...
+[2017-12-31 13:44] [ALPM-SCRIPTLET] perl: warning: Setting locale failed.
+[2017-12-31 13:44] [ALPM-SCRIPTLET] perl: warning: Please check that your locale settings:
+[2017-12-31 13:44] [ALPM-SCRIPTLET] 	LANGUAGE = (unset),
+[2017-12-31 13:44] [ALPM-SCRIPTLET] 	LC_ALL = (unset),
+[2017-12-31 13:44] [ALPM-SCRIPTLET] 	LANG = "en_US.UTF-8"
+[2017-12-31 13:44] [ALPM-SCRIPTLET]     are supported and installed on your system.
+[2017-12-31 13:44] [ALPM-SCRIPTLET] perl: warning: Falling back to the standard locale ("C").
+[2017-12-31 13:44] [ALPM-SCRIPTLET] ==> dkms remove broadcom-wl/6.30.223.271 -k 4.14.9-1-ARCH
+[2017-12-31 13:45] [ALPM] transaction started
+[2017-12-31 13:45] [ALPM] removed broadcom-wl-dkms (6.30.223.271-15)
+[2017-12-31 13:45] [ALPM] installed broadcom-wl (6.30.223.271-6)
+[2017-12-31 13:45] [ALPM] transaction completed
+[2017-12-31 13:45] [ALPM] running '60-linux.hook'...
+[2017-12-31 13:46] [ALPM] running 'systemd-update.hook'...
