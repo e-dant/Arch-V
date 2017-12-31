@@ -327,3 +327,14 @@
 [2017-12-31 07:57] [ALPM-SCRIPTLET]    https://github.com/neovim/neovim/wiki/FAQ
 [2017-12-31 07:57] [ALPM] transaction completed
 [2017-12-31 07:57] [ALPM] running 'systemd-update.hook'...
+[2017-12-31 10:15] [PACMAN] Running 'pacman -S fakeroot'
+[2017-12-31 10:15] [ALPM] transaction started
+[2017-12-31 10:15] [ALPM] installed fakeroot (1.22-1)
+[2017-12-31 10:15] [ALPM] transaction completed
+[2017-12-31 10:15] [ALPM] running 'systemd-update.hook'...
+[2017-12-31 10:16] [PACMAN] Running 'pacman -S sudo'
+[2017-12-31 10:16] [ALPM] transaction started
+[2017-12-31 10:16] [ALPM] installed sudo (1.8.21.p2-1)
+[2017-12-31 10:16] [ALPM] transaction completed
+[2017-12-31 10:16] [ALPM] running 'systemd-tmpfiles.hook'...
+[2017-12-31 10:16] [ALPM] running 'systemd-update.hook'...
