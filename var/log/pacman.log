@@ -338,3 +338,11 @@
 [2017-12-31 10:16] [ALPM] transaction completed
 [2017-12-31 10:16] [ALPM] running 'systemd-tmpfiles.hook'...
 [2017-12-31 10:16] [ALPM] running 'systemd-update.hook'...
+[2017-12-31 10:23] [PACMAN] Running 'pacman -U broadcom-wl-6.30.223.271-6-x86_64.pkg.tar.xz'
+[2017-12-31 13:26] [PACMAN] Running 'pacman -U broadcom-wl.tar.gz'
+[2017-12-31 13:29] [PACMAN] Running 'pacman -U broadcom-wl'
+[2017-12-31 13:29] [PACMAN] Running 'pacman -U broadcom-wl/'
+[2017-12-31 13:29] [PACMAN] Running 'pacman -U broadcom-wl/pkg/broadcom-wl/'
+[2017-12-31 13:30] [PACMAN] Running 'pacman -U .'
+[2017-12-31 13:30] [PACMAN] Running 'pacman -U .INSTALL'
+[2017-12-31 13:31] [PACMAN] Running 'pacman -U broadcom-wl-6.30.223.271-6-x86_64.pkg.tar.xz'
