@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Javascript examples: Libsecret Library Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="Libsecret Library Reference Manual">
+<link rel="up" href="examples.html" title="Part II. Examples">
+<link rel="prev" href="c-remove-example.html" title="C example: Remove a password">
+<link rel="next" href="js-store-example.html" title="Javascript example: Store a password">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="examples.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="c-remove-example.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="js-store-example.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="chapter">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="js-examples"></a>Javascript examples</h2></div></div></div>
+<div class="toc"><dl class="toc">
+<dt><span class="section"><a href="js-examples.html#js-schema-example">Javascript example: Define a password schema</a></span></dt>
+<dt><span class="section"><a href="js-store-example.html">Javascript example: Store a password</a></span></dt>
+<dt><span class="section"><a href="js-lookup-example.html">Javascript example: Lookup a password</a></span></dt>
+<dt><span class="section"><a href="js-remove-example.html">Javascript example: Remove a password</a></span></dt>
+</dl></div>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="js-schema-example"></a>Javascript example: Define a password schema</h2></div></div></div>
+<p>Each stored password has a set of attributes which are later
+			used to lookup the password. The names and types of the attributes
+			are defined in a schema. The schema is usually defined once globally.
+			Here's how to define a schema:</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="keyword">const</span><span class="normal"> Secret </span><span class="symbol">=</span><span class="normal"> imports</span><span class="symbol">.</span><span class="normal">gi</span><span class="symbol">.</span><span class="normal">Secret</span><span class="symbol">;</span>
+
+<span class="comment">/* This schema is usually defined once globally */</span>
+<span class="keyword">const</span><span class="normal"> EXAMPLE_SCHEMA </span><span class="symbol">=</span><span class="normal"> </span><span class="usertype">new</span><span class="normal"> Secret</span><span class="symbol">.</span><span class="normal">Schema</span><span class="symbol">.</span><span class="function">new</span><span class="symbol">(</span><span class="string">"org.example.Password"</span><span class="symbol">,</span>
+<span class="normal">    Secret</span><span class="symbol">.</span><span class="normal">SchemaFlags</span><span class="symbol">.</span><span class="normal">NONE</span><span class="symbol">,</span>
+<span class="normal">    </span><span class="cbracket">{</span>
+<span class="normal">        </span><span class="string">"number"</span><span class="symbol">:</span><span class="normal"> Secret</span><span class="symbol">.</span><span class="normal">SchemaAttributeType</span><span class="symbol">.</span><span class="normal">INTEGER</span><span class="symbol">,</span>
+<span class="normal">        </span><span class="string">"string"</span><span class="symbol">:</span><span class="normal"> Secret</span><span class="symbol">.</span><span class="normal">SchemaAttributeType</span><span class="symbol">.</span><span class="normal">STRING</span><span class="symbol">,</span>
+<span class="normal">        </span><span class="string">"even"</span><span class="symbol">:</span><span class="normal"> Secret</span><span class="symbol">.</span><span class="normal">SchemaAttributeType</span><span class="symbol">.</span><span class="normal">BOOLEAN</span><span class="symbol">,</span>
+<span class="normal">    </span><span class="cbracket">}</span>
+<span class="symbol">);</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>See the <a class="link" href="js-store-example.html" title="Javascript example: Store a password">other examples</a> for how
+			to use the schema.</p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.25.1</div>
+</body>
+</html>

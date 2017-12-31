@@ -1,0 +1,12 @@
+[Trigger]
+Type = File
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Target = usr/lib/modules/4.14.9-1-ARCH/*
+Target = usr/lib/modules/extramodules-4.14-ARCH/*
+
+[Action]
+Description = Updating linux module dependencies...
+When = PostTransaction
+Exec = /usr/bin/depmod 4.14.9-1-ARCH

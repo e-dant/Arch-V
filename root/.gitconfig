@@ -1,0 +1,5 @@
+[user]
+	name = e-dant
+	email = wlink10@gmail.com
+[credential]
+	helper = cache --timeout=21600

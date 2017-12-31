@@ -1,0 +1,8 @@
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: termkey
+Description: Abstract terminal key input library
+Version: 0.20
+Libs: -L${libdir} -ltermkey
+Cflags: -I${includedir}

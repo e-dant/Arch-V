@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>C examples: Libsecret Library Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="Libsecret Library Reference Manual">
+<link rel="up" href="examples.html" title="Part II. Examples">
+<link rel="prev" href="examples.html" title="Part II. Examples">
+<link rel="next" href="c-store-example.html" title="C example: Store a password">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="examples.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="examples.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="c-store-example.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="chapter">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="c-examples"></a>C examples</h2></div></div></div>
+<div class="toc"><dl class="toc">
+<dt><span class="section"><a href="c-examples.html#c-schema-example">C example: Define a password schema</a></span></dt>
+<dt><span class="section"><a href="c-store-example.html">C example: Store a password</a></span></dt>
+<dt><span class="section"><a href="c-lookup-example.html">C example: Lookup a password</a></span></dt>
+<dt><span class="section"><a href="c-remove-example.html">C example: Remove a password</a></span></dt>
+</dl></div>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="c-schema-example"></a>C example: Define a password schema</h2></div></div></div>
+<p>Each stored password has a set of attributes which are later
+			used to lookup the password. The names and types of the attributes
+			are defined in a schema. The schema is usually defined once globally.
+			Here's how to define a schema:</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="comment">/* in a header: */</span>
+
+<span class="keyword">const</span><span class="normal"> <a href="libsecret-SecretSchema.html#SecretSchema">SecretSchema</a> </span><span class="symbol">*</span><span class="normal"> </span><span class="function">example_get_schema</span><span class="normal"> </span><span class="symbol">(</span><span class="type">void</span><span class="symbol">)</span><span class="normal"> <a href="/usr/share/gtk-doc/html/glib/glib-Miscellaneous-Macros.html#G-GNUC-CONST:CAPS">G_GNUC_CONST</a></span><span class="symbol">;</span>
+
+<span class="preproc">#define</span><span class="normal"> </span><span class="usertype">EXAMPLE_SCHEMA</span><span class="normal">  </span><span class="function">example_get_schema</span><span class="normal"> </span><span class="symbol">()</span>
+
+
+<span class="comment">/* in a .c file: */</span>
+
+<span class="keyword">const</span><span class="normal"> <a href="libsecret-SecretSchema.html#SecretSchema">SecretSchema</a> </span><span class="symbol">*</span>
+<span class="function">example_get_schema</span><span class="normal"> </span><span class="symbol">(</span><span class="type">void</span><span class="symbol">)</span>
+<span class="cbracket">{</span>
+<span class="normal">    </span><span class="keyword">static</span><span class="normal"> </span><span class="keyword">const</span><span class="normal"> </span><span class="usertype">SecretSchema</span><span class="normal"> the_schema </span><span class="symbol">=</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">        </span><span class="string">"org.example.Password"</span><span class="symbol">,</span><span class="normal"> <a href="libsecret-SecretSchema.html#SECRET-SCHEMA-NONE:CAPS">SECRET_SCHEMA_NONE</a></span><span class="symbol">,</span>
+<span class="normal">        </span><span class="cbracket">{</span>
+<span class="normal">            </span><span class="cbracket">{</span><span class="normal">  </span><span class="string">"number"</span><span class="symbol">,</span><span class="normal"> <a href="libsecret-SecretSchema.html#SECRET-SCHEMA-ATTRIBUTE-INTEGER:CAPS">SECRET_SCHEMA_ATTRIBUTE_INTEGER</a> </span><span class="cbracket">}</span><span class="symbol">,</span>
+<span class="normal">            </span><span class="cbracket">{</span><span class="normal">  </span><span class="string">"string"</span><span class="symbol">,</span><span class="normal"> <a href="libsecret-SecretSchema.html#SECRET-SCHEMA-ATTRIBUTE-STRING:CAPS">SECRET_SCHEMA_ATTRIBUTE_STRING</a> </span><span class="cbracket">}</span><span class="symbol">,</span>
+<span class="normal">            </span><span class="cbracket">{</span><span class="normal">  </span><span class="string">"even"</span><span class="symbol">,</span><span class="normal"> <a href="libsecret-SecretSchema.html#SECRET-SCHEMA-ATTRIBUTE-BOOLEAN:CAPS">SECRET_SCHEMA_ATTRIBUTE_BOOLEAN</a> </span><span class="cbracket">}</span><span class="symbol">,</span>
+<span class="normal">            </span><span class="cbracket">{</span><span class="normal">  </span><span class="string">"NULL"</span><span class="symbol">,</span><span class="normal"> </span><span class="number">0</span><span class="normal"> </span><span class="cbracket">}</span><span class="symbol">,</span>
+<span class="normal">        </span><span class="cbracket">}</span>
+<span class="normal">    </span><span class="cbracket">}</span><span class="symbol">;</span>
+<span class="normal">    </span><span class="keyword">return</span><span class="normal"> </span><span class="symbol">&amp;</span><span class="normal">the_schema</span><span class="symbol">;</span>
+<span class="cbracket">}</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>See the <a class="link" href="c-store-example.html" title="C example: Store a password">other examples</a> for how
+			to use the schema.</p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.25.1</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+%NAME%
+net-tools
+
+%VERSION%
+1.60.20160710git-1
+
+%DESC%
+Configuration tools for Linux networking
+
+%URL%
+http://net-tools.sourceforge.net/
+
+%ARCH%
+x86_64
+
+%BUILDDATE%
+1470343424
+
+%INSTALLDATE%
+1514697302
+
+%PACKAGER%
+Christian Hesse <arch@eworm.de>
+
+%SIZE%
+484352
+
+%LICENSE%
+GPL2
+
+%VALIDATION%
+pgp
+
+%DEPENDS%
+glibc
+

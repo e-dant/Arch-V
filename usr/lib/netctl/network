@@ -1,0 +1,93 @@
+#! /bin/bash
+
+. /usr/lib/netctl/globals
+. "$SUBR_DIR/interface"
+
+
+## Indicate that the network stack for the profile is up
+network_ready() {
+    if ! is_yes "${WaitOnline:-no}" && ! is_yes "${NETWORK_READY:-no}"; then
+        do_debug systemd-notify --ready
+        NETWORK_READY=yes
+    fi
+}
+
+## Describe the status of the service for the profile
+# $1: status string, should be "online" when the profile gets connected
+network_status() {
+    do_debug systemd-notify --status="$1"
+    if [[ $1 == "online" ]] && is_yes "${WaitOnline:-no}"; then
+        WaitOnline=no network_ready
+    fi
+}
+
+
+ensure_root netctl
+# Ensure we are not in a transient directory
+cd /
+
+if [[ $# -eq 2 && $1 == @(start|stop) ]]; then
+    # Expose the profile name
+    Profile=$2
+    load_profile "$Profile"
+    load_interface_config "$Interface"
+elif [[ $# -ne 1 || $1 != "wait-online" ]]; then
+    exit_error "Usage: $0 {start|stop|wait-online} [profile]"
+fi
+
+case $1 in
+  start)
+    report_notice "Starting network profile '$Profile'..."
+    if is_interface "$Interface" && interface_is_up "$Interface" && \
+       ! is_yes "${ForceConnect:-no}"; then
+        report_error "The interface of network profile '$Profile' is already up"
+        exit 1
+    fi
+    if ! "${Connection}_up"; then
+        report_error "Failed to bring the network up for profile '$Profile'"
+        exit 1
+    fi
+    network_ready
+    # Sandbox the eval
+    if ! ( do_debug eval "$ExecUpPost" ); then
+        report_error "ExecUpPost failed for network profile '$Profile'"
+        # Failing ExecUpPost will take the connection down
+        "${Connection}_down"
+        exit 1
+    fi
+    network_status "online"
+    report_notice "Started network profile '$Profile'"
+  ;;
+  stop)
+    report_notice "Stopping network profile '$Profile'..."
+    # Sandbox the eval
+    if ! ( do_debug eval "$ExecDownPre" ); then
+        report_error "ExecDownPre failed for network profile '$Profile'"
+        # Failing ExecDownPre will leave the profile active
+        exit 1
+    fi
+    if ! "${Connection}_down"; then
+        report_error "Failed to bring the network down for profile '$Profile'"
+        exit 1
+    fi
+    network_status ""
+    if is_interface "$Interface" && interface_is_up "$Interface" && \
+       ! is_yes "${ForceConnect:-no}"; then
+        report_error "The interface of network profile '$Profile' did not go down"
+        exit 1
+    fi
+    report_notice "Stopped network profile '$Profile'"
+  ;;
+  wait-online)
+    mapfile -t Profiles < <(list_profiles)
+    i=0
+    # Wait for all enabled profiles to come online within a single timeout
+    timeout_wait "${TIMEOUT_ONLINE:-120}" \
+                 '! until [[ $(sd_call is-enabled "${Profiles[i]}") == "enabled" &&
+                             $(sd_status_text "${Profiles[i]}") != "online" ]]; do
+                      (( ++i < ${#Profiles[@]} )) || return 0; done'
+  ;;
+esac
+
+
+# vim: ft=sh ts=4 et sw=4:

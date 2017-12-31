@@ -1,0 +1,36 @@
+%NAME%
+iw
+
+%VERSION%
+4.9-2
+
+%DESC%
+nl80211 based CLI configuration utility for wireless devices
+
+%URL%
+http://wireless.kernel.org/en/users/Documentation/iw
+
+%ARCH%
+x86_64
+
+%BUILDDATE%
+1513810475
+
+%INSTALLDATE%
+1514691367
+
+%PACKAGER%
+Christian Hesse <arch@eworm.de>
+
+%SIZE%
+192512
+
+%LICENSE%
+GPL
+
+%VALIDATION%
+pgp
+
+%DEPENDS%
+libnl
+

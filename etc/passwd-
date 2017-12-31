@@ -1,0 +1,14 @@
+root:x:0:0::/root:/bin/bash
+ftp:x:14:11::/srv/ftp:/sbin/nologin
+systemd-resolve:x:980:980:systemd Resolver:/:/sbin/nologin
+bin:x:1:1::/:/sbin/nologin
+systemd-journal-remote:x:982:982:systemd Journal Remote:/:/sbin/nologin
+mail:x:12:12::/var/spool/mail:/sbin/nologin
+daemon:x:2:2::/:/sbin/nologin
+uuidd:x:68:68::/:/sbin/nologin
+systemd-network:x:979:979:systemd Network Management:/:/sbin/nologin
+http:x:33:33::/srv/http:/sbin/nologin
+nobody:x:65534:65534:Nobody:/:/sbin/nologin
+systemd-coredump:x:981:981:systemd Core Dumper:/:/sbin/nologin
+dbus:x:81:81:System Message Bus:/:/sbin/nologin
+edant:x:42:42::/edant/home:/bin/bash

@@ -1,0 +1,45 @@
+%NAME%
+jemalloc
+
+%VERSION%
+1:5.0.1-3
+
+%DESC%
+General-purpose scalable concurrent malloc implementation
+
+%URL%
+http://www.canonware.com/jemalloc/
+
+%ARCH%
+x86_64
+
+%BUILDDATE%
+1500035920
+
+%INSTALLDATE%
+1514707018
+
+%PACKAGER%
+Christian Hesse <arch@eworm.de>
+
+%SIZE%
+1602560
+
+%REASON%
+1
+
+%LICENSE%
+BSD
+
+%VALIDATION%
+pgp
+
+%DEPENDS%
+glibc
+
+%OPTDEPENDS%
+perl: for jeprof
+
+%PROVIDES%
+libjemalloc.so=2-64
+

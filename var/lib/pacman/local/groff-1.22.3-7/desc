@@ -1,0 +1,48 @@
+%NAME%
+groff
+
+%VERSION%
+1.22.3-7
+
+%DESC%
+GNU troff text-formatting system
+
+%URL%
+http://www.gnu.org/software/groff/groff.html
+
+%ARCH%
+x86_64
+
+%BUILDDATE%
+1470082629
+
+%INSTALLDATE%
+1514690970
+
+%PACKAGER%
+Christian Hesse <arch@eworm.de>
+
+%SIZE%
+8485888
+
+%REASON%
+1
+
+%GROUPS%
+base-devel
+
+%LICENSE%
+GPL
+
+%VALIDATION%
+pgp
+
+%DEPENDS%
+perl
+gcc-libs
+
+%OPTDEPENDS%
+netpbm: for use together with man -H command interaction in browsers
+psutils: for use together with man -H command interaction in browsers
+libxaw: for gxditview
+

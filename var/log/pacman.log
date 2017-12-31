@@ -1,0 +1,329 @@
+[2017-12-31 03:24] [PACMAN] Running 'pacman -r /mnt -Sy --cachedir=/mnt/var/cache/pacman/pkg --noconfirm base'
+[2017-12-31 03:24] [PACMAN] synchronizing package lists
+[2017-12-31 03:27] [ALPM] transaction started
+[2017-12-31 03:27] [ALPM] installed linux-api-headers (4.12.7-1)
+[2017-12-31 03:27] [ALPM] installed tzdata (2017c-1)
+[2017-12-31 03:27] [ALPM] installed iana-etc (20170824-1)
+[2017-12-31 03:27] [ALPM] installed filesystem (2017.10-2)
+[2017-12-31 03:27] [ALPM] installed glibc (2.26-8)
+[2017-12-31 03:27] [ALPM] installed gcc-libs (7.2.1-2)
+[2017-12-31 03:27] [ALPM] installed ncurses (6.0+20170902-3)
+[2017-12-31 03:27] [ALPM] installed readline (7.0.003-1)
+[2017-12-31 03:27] [ALPM] installed bash (4.4.012-2)
+[2017-12-31 03:27] [ALPM] installed bzip2 (1.0.6-6)
+[2017-12-31 03:27] [ALPM] installed attr (2.4.47-3)
+[2017-12-31 03:27] [ALPM] installed acl (2.2.52-4)
+[2017-12-31 03:27] [ALPM] installed gmp (6.1.2-1)
+[2017-12-31 03:27] [ALPM] installed libcap (2.25-1)
+[2017-12-31 03:27] [ALPM] installed gdbm (1.13-1)
+[2017-12-31 03:27] [ALPM] installed db (5.3.28-3)
+[2017-12-31 03:28] [ALPM] installed perl (5.26.1-1)
+[2017-12-31 03:28] [ALPM] installed openssl (1.1.0.g-1)
+[2017-12-31 03:28] [ALPM] installed coreutils (8.28-1)
+[2017-12-31 03:28] [ALPM] installed libgpg-error (1.27-1)
+[2017-12-31 03:28] [ALPM] installed libgcrypt (1.8.2-1)
+[2017-12-31 03:28] [ALPM] installed lz4 (1:1.8.0-1)
+[2017-12-31 03:28] [ALPM] installed xz (5.2.3-1)
+[2017-12-31 03:28] [ALPM] installed libsystemd (236.0-2)
+[2017-12-31 03:28] [ALPM] installed device-mapper (2.02.177-1)
+[2017-12-31 03:28] [ALPM] installed popt (1.16-9)
+[2017-12-31 03:28] [ALPM] installed libutil-linux (2.31.1-1)
+[2017-12-31 03:28] [ALPM] installed json-c (0.12.1-1)
+[2017-12-31 03:28] [ALPM] installed cryptsetup (2.0.0-1)
+[2017-12-31 03:28] [ALPM] installed expat (2.2.5-1)
+[2017-12-31 03:28] [ALPM] installed dbus (1.12.2-1)
+[2017-12-31 03:28] [ALPM] installed libmnl (1.0.4-1)
+[2017-12-31 03:28] [ALPM] installed libnftnl (1.0.8-1)
+[2017-12-31 03:28] [ALPM] installed libnl (3.4.0-1)
+[2017-12-31 03:28] [ALPM] installed libusb (1.0.21-2)
+[2017-12-31 03:28] [ALPM] installed libpcap (1.8.1-2)
+[2017-12-31 03:28] [ALPM] installed iptables (1.6.1-2)
+[2017-12-31 03:28] [ALPM] installed zlib (1:1.2.11-2)
+[2017-12-31 03:28] [ALPM] installed cracklib (2.9.6-1)
+[2017-12-31 03:28] [ALPM] installed e2fsprogs (1.43.7-1)
+[2017-12-31 03:28] [ALPM] installed libsasl (2.1.26-11)
+[2017-12-31 03:28] [ALPM] installed libldap (2.4.45-4)
+[2017-12-31 03:28] [ALPM] installed keyutils (1.5.10-1)
+[2017-12-31 03:28] [ALPM] installed krb5 (1.16-1)
+[2017-12-31 03:28] [ALPM] installed libtirpc (1.0.2-1)
+[2017-12-31 03:28] [ALPM] installed pambase (20171006-1)
+[2017-12-31 03:28] [ALPM] installed pam (1.3.0-1)
+[2017-12-31 03:28] [ALPM] installed kbd (2.0.4-1)
+[2017-12-31 03:28] [ALPM] installed kmod (24-1)
+[2017-12-31 03:28] [ALPM] installed hwids (20171003-1)
+[2017-12-31 03:28] [ALPM] installed libidn (1.33-2)
+[2017-12-31 03:28] [ALPM] installed libelf (0.170-1)
+[2017-12-31 03:28] [ALPM] installed libseccomp (2.3.2-1)
+[2017-12-31 03:28] [ALPM] installed shadow (4.5-4)
+[2017-12-31 03:28] [ALPM] installed libcap-ng (0.7.8-1)
+[2017-12-31 03:28] [ALPM] installed util-linux (2.31.1-1)
+[2017-12-31 03:28] [ALPM] installed systemd (236.0-2)
+[2017-12-31 03:28] [ALPM-SCRIPTLET] Initializing machine ID from random generator.
+[2017-12-31 03:28] [ALPM-SCRIPTLET] Created symlink /etc/systemd/system/getty.target.wants/getty@tty1.service → /usr/lib/systemd/system/getty@.service.
+[2017-12-31 03:28] [ALPM-SCRIPTLET] Created symlink /etc/systemd/system/multi-user.target.wants/remote-fs.target → /usr/lib/systemd/system/remote-fs.target.
+[2017-12-31 03:28] [ALPM-SCRIPTLET] :: Append 'init=/usr/lib/systemd/systemd' to your kernel command line in your
+[2017-12-31 03:28] [ALPM-SCRIPTLET]    bootloader to replace sysvinit with systemd, or install systemd-sysvcompat
+[2017-12-31 03:28] [ALPM] installed dhcpcd (6.11.5-1)
+[2017-12-31 03:28] [ALPM] installed diffutils (3.6-1)
+[2017-12-31 03:28] [ALPM] installed file (5.32-1)
+[2017-12-31 03:28] [ALPM] installed findutils (4.6.0-2)
+[2017-12-31 03:28] [ALPM] installed mpfr (3.1.6.p1-1)
+[2017-12-31 03:28] [ALPM] installed gawk (4.2.0-2)
+[2017-12-31 03:28] [ALPM] installed pcre (8.41-1)
+[2017-12-31 03:28] [ALPM] installed libffi (3.2.1-2)
+[2017-12-31 03:28] [ALPM] installed glib2 (2.54.2-2)
+[2017-12-31 03:28] [ALPM] installed libunistring (0.9.8-1)
+[2017-12-31 03:28] [ALPM] installed gettext (0.19.8.1-2)
+[2017-12-31 03:28] [ALPM] installed grep (3.1-1)
+[2017-12-31 03:28] [ALPM] installed less (487-1)
+[2017-12-31 03:28] [ALPM] installed gzip (1.8-2)
+[2017-12-31 03:28] [ALPM] installed inetutils (1.9.4-5)
+[2017-12-31 03:28] [ALPM] installed iproute2 (4.14.1-2)
+[2017-12-31 03:28] [ALPM] installed sysfsutils (2.1.0-9)
+[2017-12-31 03:28] [ALPM] installed iputils (20161105.1f2bb12-2)
+[2017-12-31 03:28] [ALPM] installed jfsutils (1.1.15-4)
+[2017-12-31 03:28] [ALPM] installed licenses (20171006-1)
+[2017-12-31 03:29] [ALPM] installed linux-firmware (20171206.fdee922-1)
+[2017-12-31 03:29] [ALPM] installed mkinitcpio-busybox (1.27.2-1)
+[2017-12-31 03:29] [ALPM] installed libarchive (3.3.2-1)
+[2017-12-31 03:29] [ALPM] installed mkinitcpio (24-2)
+[2017-12-31 03:29] [ALPM] installed linux (4.14.9-1)
+[2017-12-31 03:29] [ALPM] installed logrotate (3.13.0-1)
+[2017-12-31 03:29] [ALPM] installed libaio (0.3.110-1)
+[2017-12-31 03:29] [ALPM] installed thin-provisioning-tools (0.7.5-1)
+[2017-12-31 03:29] [ALPM] installed lvm2 (2.02.177-1)
+[2017-12-31 03:29] [ALPM] installed groff (1.22.3-7)
+[2017-12-31 03:29] [ALPM] installed libpipeline (1.5.0-1)
+[2017-12-31 03:29] [ALPM] installed man-db (2.7.6.1-2)
+[2017-12-31 03:29] [ALPM] installed man-pages (4.14-1)
+[2017-12-31 03:29] [ALPM] installed mdadm (4.0-1)
+[2017-12-31 03:29] [ALPM] installed nano (2.9.1-1)
+[2017-12-31 03:29] [ALPM] installed openresolv (3.9.0-1)
+[2017-12-31 03:29] [ALPM] installed netctl (1.14-1)
+[2017-12-31 03:29] [ALPM] installed libtasn1 (4.12-2)
+[2017-12-31 03:29] [ALPM] installed p11-kit (0.23.9-1)
+[2017-12-31 03:29] [ALPM] installed ca-certificates-utils (20170307-1)
+[2017-12-31 03:29] [ALPM] installed ca-certificates-mozilla (3.34.1-1)
+[2017-12-31 03:29] [ALPM] installed ca-certificates-cacert (20140824-4)
+[2017-12-31 03:29] [ALPM] installed ca-certificates (20170307-1)
+[2017-12-31 03:29] [ALPM] installed libssh2 (1.8.0-2)
+[2017-12-31 03:29] [ALPM] installed libidn2 (2.0.4-2)
+[2017-12-31 03:29] [ALPM] installed libpsl (0.19.1-1)
+[2017-12-31 03:29] [ALPM] installed libnghttp2 (1.28.0-1)
+[2017-12-31 03:29] [ALPM] installed curl (7.57.0-1)
+[2017-12-31 03:29] [ALPM] installed npth (1.5-1)
+[2017-12-31 03:29] [ALPM] installed libksba (1.3.5-1)
+[2017-12-31 03:29] [ALPM] installed libassuan (2.5.1-1)
+[2017-12-31 03:29] [ALPM] installed libsecret (0.18.5+14+g9980655-1)
+[2017-12-31 03:29] [ALPM] installed pinentry (1.1.0-1)
+[2017-12-31 03:29] [ALPM] installed nettle (3.4-1)
+[2017-12-31 03:29] [ALPM] installed gnutls (3.5.16-1)
+[2017-12-31 03:29] [ALPM] installed sqlite (3.21.0-1)
+[2017-12-31 03:29] [ALPM] installed gnupg (2.2.4-1)
+[2017-12-31 03:29] [ALPM] installed gpgme (1.10.0-1)
+[2017-12-31 03:29] [ALPM] installed pacman-mirrorlist (20171203-1)
+[2017-12-31 03:29] [ALPM] installed archlinux-keyring (20171213-1)
+[2017-12-31 03:29] [ALPM] installed pacman (5.0.2-2)
+[2017-12-31 03:29] [ALPM] installed pciutils (3.5.6-1)
+[2017-12-31 03:29] [ALPM] installed pcmciautils (018-7)
+[2017-12-31 03:29] [ALPM] installed procps-ng (3.3.12-2)
+[2017-12-31 03:29] [ALPM] installed psmisc (23.1-1)
+[2017-12-31 03:29] [ALPM] installed reiserfsprogs (3.6.27-1)
+[2017-12-31 03:29] [ALPM] installed s-nail (14.9.6-1)
+[2017-12-31 03:29] [ALPM] installed sed (4.4-1)
+[2017-12-31 03:29] [ALPM] installed systemd-sysvcompat (236.0-2)
+[2017-12-31 03:29] [ALPM] installed tar (1.30-1)
+[2017-12-31 03:29] [ALPM] installed texinfo (6.5-1)
+[2017-12-31 03:29] [ALPM] installed usbutils (009-1)
+[2017-12-31 03:29] [ALPM] installed vi (1:070224-2)
+[2017-12-31 03:29] [ALPM] installed which (2.21-2)
+[2017-12-31 03:29] [ALPM] installed xfsprogs (4.13.1-1)
+[2017-12-31 03:29] [ALPM] transaction completed
+[2017-12-31 03:29] [ALPM] running '60-linux.hook'...
+[2017-12-31 03:30] [ALPM] running '90-linux.hook'...
+[2017-12-31 03:30] [ALPM-SCRIPTLET] ==> Building image from preset: /etc/mkinitcpio.d/linux.preset: 'default'
+[2017-12-31 03:30] [ALPM-SCRIPTLET]   -> -k /boot/vmlinuz-linux -c /etc/mkinitcpio.conf -g /boot/initramfs-linux.img
+[2017-12-31 03:30] [ALPM-SCRIPTLET] ==> Starting build: 4.14.9-1-ARCH
+[2017-12-31 03:30] [ALPM-SCRIPTLET]   -> Running build hook: [base]
+[2017-12-31 03:30] [ALPM-SCRIPTLET]   -> Running build hook: [udev]
+[2017-12-31 03:30] [ALPM-SCRIPTLET]   -> Running build hook: [autodetect]
+[2017-12-31 03:30] [ALPM-SCRIPTLET]   -> Running build hook: [modconf]
+[2017-12-31 03:30] [ALPM-SCRIPTLET]   -> Running build hook: [block]
+[2017-12-31 03:30] [ALPM-SCRIPTLET]   -> Running build hook: [filesystems]
+[2017-12-31 03:30] [ALPM-SCRIPTLET]   -> Running build hook: [keyboard]
+[2017-12-31 03:30] [ALPM-SCRIPTLET]   -> Running build hook: [fsck]
+[2017-12-31 03:30] [ALPM-SCRIPTLET] ==> Generating module dependencies
+[2017-12-31 03:30] [ALPM-SCRIPTLET] ==> Creating gzip-compressed initcpio image: /boot/initramfs-linux.img
+[2017-12-31 03:30] [ALPM-SCRIPTLET] ==> Image generation successful
+[2017-12-31 03:30] [ALPM-SCRIPTLET] ==> Building image from preset: /etc/mkinitcpio.d/linux.preset: 'fallback'
+[2017-12-31 03:30] [ALPM-SCRIPTLET]   -> -k /boot/vmlinuz-linux -c /etc/mkinitcpio.conf -g /boot/initramfs-linux-fallback.img -S autodetect
+[2017-12-31 03:30] [ALPM-SCRIPTLET] ==> Starting build: 4.14.9-1-ARCH
+[2017-12-31 03:30] [ALPM-SCRIPTLET]   -> Running build hook: [base]
+[2017-12-31 03:30] [ALPM-SCRIPTLET]   -> Running build hook: [udev]
+[2017-12-31 03:31] [ALPM-SCRIPTLET]   -> Running build hook: [modconf]
+[2017-12-31 03:31] [ALPM-SCRIPTLET]   -> Running build hook: [block]
+[2017-12-31 03:31] [ALPM-SCRIPTLET] ==> WARNING: Possibly missing firmware for module: wd719x
+[2017-12-31 03:31] [ALPM-SCRIPTLET] ==> WARNING: Possibly missing firmware for module: aic94xx
+[2017-12-31 03:31] [ALPM-SCRIPTLET]   -> Running build hook: [filesystems]
+[2017-12-31 03:31] [ALPM-SCRIPTLET]   -> Running build hook: [keyboard]
+[2017-12-31 03:31] [ALPM-SCRIPTLET]   -> Running build hook: [fsck]
+[2017-12-31 03:32] [ALPM-SCRIPTLET] ==> Generating module dependencies
+[2017-12-31 03:32] [ALPM-SCRIPTLET] ==> Creating gzip-compressed initcpio image: /boot/initramfs-linux-fallback.img
+[2017-12-31 03:32] [ALPM-SCRIPTLET] ==> Image generation successful
+[2017-12-31 03:32] [ALPM] running 'detect-old-perl-modules.hook'...
+[2017-12-31 03:32] [ALPM-SCRIPTLET] perl: warning: Setting locale failed.
+[2017-12-31 03:32] [ALPM-SCRIPTLET] perl: warning: Please check that your locale settings:
+[2017-12-31 03:32] [ALPM-SCRIPTLET] 	LANGUAGE = (unset),
+[2017-12-31 03:32] [ALPM-SCRIPTLET] 	LC_ALL = (unset),
+[2017-12-31 03:32] [ALPM-SCRIPTLET] 	LANG = "en_US.UTF-8"
+[2017-12-31 03:32] [ALPM-SCRIPTLET]     are supported and installed on your system.
+[2017-12-31 03:32] [ALPM-SCRIPTLET] perl: warning: Falling back to the standard locale ("C").
+[2017-12-31 03:32] [ALPM] running 'systemd-hwdb.hook'...
+[2017-12-31 03:32] [ALPM] running 'systemd-sysusers.hook'...
+[2017-12-31 03:32] [ALPM] running 'systemd-tmpfiles.hook'...
+[2017-12-31 03:32] [ALPM] running 'systemd-update.hook'...
+[2017-12-31 03:32] [ALPM] running 'texinfo-install.hook'...
+[2017-12-31 03:32] [ALPM] running 'update-ca-trust.hook'...
+[2017-12-31 03:35] [PACMAN] Running 'pacman -S wl'
+[2017-12-31 03:35] [PACMAN] Running 'pacman -S dialog'
+[2017-12-31 03:35] [ALPM] transaction started
+[2017-12-31 03:35] [ALPM] installed dialog (1:1.3_20171209-1)
+[2017-12-31 03:35] [ALPM] transaction completed
+[2017-12-31 03:35] [ALPM] running 'systemd-update.hook'...
+[2017-12-31 03:35] [PACMAN] Running 'pacman -S iw wpa-supplicant'
+[2017-12-31 03:36] [PACMAN] Running 'pacman -S iw'
+[2017-12-31 03:36] [ALPM] transaction started
+[2017-12-31 03:36] [ALPM] installed iw (4.9-2)
+[2017-12-31 03:36] [ALPM] transaction completed
+[2017-12-31 03:36] [ALPM] running 'systemd-update.hook'...
+[2017-12-31 03:36] [PACMAN] Running 'pacman -S wpa-supplicant'
+[2017-12-31 03:36] [PACMAN] Running 'pacman -S wpa'
+[2017-12-31 03:37] [PACMAN] Running 'pacman -S wpa-supplicant'
+[2017-12-31 03:37] [PACMAN] Running 'pacman -S core'
+[2017-12-31 03:40] [PACMAN] Running 'pacman -r /mnt -Sy --cachedir=/mnt/var/cache/pacman/pkg --noconfirm core'
+[2017-12-31 03:40] [PACMAN] synchronizing package lists
+[2017-12-31 03:40] [PACMAN] Running 'pacman -r /mnt -Sy --cachedir=/mnt/var/cache/pacman/pkg --noconfirm wpa-supplicant'
+[2017-12-31 03:40] [PACMAN] synchronizing package lists
+[2017-12-31 03:40] [PACMAN] Running 'pacman -S zsh'
+[2017-12-31 03:40] [ALPM] transaction started
+[2017-12-31 03:40] [ALPM] installed zsh (5.4.2-1)
+[2017-12-31 03:40] [ALPM] transaction completed
+[2017-12-31 03:40] [ALPM] running 'systemd-update.hook'...
+[2017-12-31 03:41] [PACMAN] Running 'pacman -S fish'
+[2017-12-31 03:41] [ALPM] transaction started
+[2017-12-31 03:41] [ALPM] installed bc (1.07.1-1)
+[2017-12-31 03:41] [ALPM] installed fish (2.7.0-1)
+[2017-12-31 03:41] [ALPM] transaction completed
+[2017-12-31 03:41] [ALPM] running 'systemd-update.hook'...
+[2017-12-31 03:41] [ALPM] running 'texinfo-install.hook'...
+[2017-12-31 03:43] [PACMAN] Running 'pacman -S broadcom-wl'
+[2017-12-31 03:44] [PACMAN] Running 'pacman -Syu broadcom-wl'
+[2017-12-31 03:44] [PACMAN] synchronizing package lists
+[2017-12-31 03:44] [PACMAN] Running 'pacman -Syu broadcom-wl-dkms'
+[2017-12-31 03:44] [PACMAN] synchronizing package lists
+[2017-12-31 03:44] [PACMAN] starting full system upgrade
+[2017-12-31 03:45] [ALPM] transaction started
+[2017-12-31 03:45] [ALPM] installed binutils (2.29.1-1)
+[2017-12-31 03:45] [ALPM] installed libmpc (1.0.3-2)
+[2017-12-31 03:45] [ALPM] installed gcc (7.2.1-2)
+[2017-12-31 03:45] [ALPM] installed libtool (2.4.6+40+g6ca5e224-2)
+[2017-12-31 03:45] [ALPM] installed libatomic_ops (7.4.8-1)
+[2017-12-31 03:45] [ALPM] installed gc (7.6.0-1)
+[2017-12-31 03:45] [ALPM] installed guile (2.2.3-1)
+[2017-12-31 03:45] [ALPM] installed make (4.2.1-2)
+[2017-12-31 03:45] [ALPM] installed patch (2.7.5-1)
+[2017-12-31 03:45] [ALPM] installed dkms (2.5-1)
+[2017-12-31 03:45] [ALPM] installed broadcom-wl-dkms (6.30.223.271-15)
+[2017-12-31 03:45] [ALPM-SCRIPTLET] 
+[2017-12-31 03:45] [ALPM-SCRIPTLET] To load the new module, run as root:
+[2017-12-31 03:45] [ALPM-SCRIPTLET] 
+[2017-12-31 03:45] [ALPM-SCRIPTLET]   rmmod b43 b43legacy ssb bcm43xx brcm80211 brcmfmac brcmsmac bcma wl
+[2017-12-31 03:45] [ALPM-SCRIPTLET]   modprobe wl
+[2017-12-31 03:45] [ALPM-SCRIPTLET] 
+[2017-12-31 03:45] [ALPM-SCRIPTLET] or just reboot the system.
+[2017-12-31 03:45] [ALPM-SCRIPTLET] 
+[2017-12-31 03:45] [ALPM] transaction completed
+[2017-12-31 03:45] [ALPM] running '70-dkms-install.hook'...
+[2017-12-31 03:45] [ALPM-SCRIPTLET] ==> No kernel 4.14.9-1-ARCH headers. You must install them to use DKMS!
+[2017-12-31 03:45] [ALPM] running 'systemd-update.hook'...
+[2017-12-31 03:45] [ALPM] running 'texinfo-install.hook'...
+[2017-12-31 03:47] [PACMAN] Running 'pacman -S linux-headers'
+[2017-12-31 03:47] [ALPM] transaction started
+[2017-12-31 03:48] [ALPM] installed linux-headers (4.14.9-1)
+[2017-12-31 03:48] [ALPM] transaction completed
+[2017-12-31 03:48] [ALPM] running '60-linux.hook'...
+[2017-12-31 03:48] [ALPM] running '70-dkms-install.hook'...
+[2017-12-31 03:48] [ALPM-SCRIPTLET] ==> dkms install broadcom-wl/6.30.223.271 -k 4.14.9-1-ARCH
+[2017-12-31 03:51] [ALPM] running 'systemd-update.hook'...
+[2017-12-31 03:52] [PACMAN] Running 'pacman -S linux-macbook'
+[2017-12-31 04:35] [PACMAN] Running 'pacman -S ipconfig'
+[2017-12-31 04:40] [PACMAN] Running 'pacman -S ssh'
+[2017-12-31 04:40] [PACMAN] Running 'pacman -Syy ssh'
+[2017-12-31 04:40] [PACMAN] synchronizing package lists
+[2017-12-31 04:40] [PACMAN] Running 'pacman -Syu'
+[2017-12-31 04:40] [PACMAN] synchronizing package lists
+[2017-12-31 04:41] [PACMAN] starting full system upgrade
+[2017-12-31 04:41] [PACMAN] Running 'pacman -S ssh'
+[2017-12-31 04:41] [PACMAN] Running 'pacman -S openssh'
+[2017-12-31 04:41] [ALPM] transaction started
+[2017-12-31 04:41] [ALPM] installed libedit (20170329_3.1-1)
+[2017-12-31 04:41] [ALPM] installed dnssec-anchors (20170711-1)
+[2017-12-31 04:41] [ALPM] installed ldns (1.7.0-4)
+[2017-12-31 04:41] [ALPM] installed openssh (7.6p1-1)
+[2017-12-31 04:41] [ALPM] transaction completed
+[2017-12-31 04:41] [ALPM] running 'systemd-tmpfiles.hook'...
+[2017-12-31 04:41] [ALPM] running 'systemd-update.hook'...
+[2017-12-31 04:42] [PACMAN] Running 'pacman -S rsync'
+[2017-12-31 04:42] [ALPM] transaction started
+[2017-12-31 04:42] [ALPM] installed rsync (3.1.2-8)
+[2017-12-31 04:42] [ALPM] transaction completed
+[2017-12-31 04:42] [ALPM] running 'systemd-update.hook'...
+[2017-12-31 04:43] [PACMAN] Running 'pacman -S ifconfig'
+[2017-12-31 05:14] [PACMAN] Running 'pacman -S net-tools'
+[2017-12-31 05:15] [ALPM] transaction started
+[2017-12-31 05:15] [ALPM] installed net-tools (1.60.20160710git-1)
+[2017-12-31 05:15] [ALPM] transaction completed
+[2017-12-31 05:15] [ALPM] running 'systemd-update.hook'...
+[2017-12-31 07:18] [PACMAN] Running 'pacman -Syu'
+[2017-12-31 07:18] [PACMAN] synchronizing package lists
+[2017-12-31 07:18] [PACMAN] starting full system upgrade
+[2017-12-31 07:19] [PACMAN] Running 'pacman -S dropbear'
+[2017-12-31 07:19] [ALPM] transaction started
+[2017-12-31 07:19] [ALPM] installed dropbear (2017.75-5)
+[2017-12-31 07:19] [ALPM] transaction completed
+[2017-12-31 07:19] [ALPM] running 'systemd-update.hook'...
+[2017-12-31 07:47] [PACMAN] Running 'pacman -R dropbear'
+[2017-12-31 07:47] [PACMAN] Running 'pacman -S git'
+[2017-12-31 07:47] [ALPM] transaction started
+[2017-12-31 07:47] [ALPM] installed perl-error (0.17025-2)
+[2017-12-31 07:47] [ALPM] installed pcre2 (10.30-1)
+[2017-12-31 07:47] [ALPM] installed git (2.15.1-2)
+[2017-12-31 07:47] [ALPM] transaction completed
+[2017-12-31 07:47] [ALPM] running 'detect-old-perl-modules.hook'...
+[2017-12-31 07:47] [ALPM-SCRIPTLET] perl: warning: Setting locale failed.
+[2017-12-31 07:47] [ALPM-SCRIPTLET] perl: warning: Please check that your locale settings:
+[2017-12-31 07:47] [ALPM-SCRIPTLET] 	LANGUAGE = (unset),
+[2017-12-31 07:47] [ALPM-SCRIPTLET] 	LC_ALL = (unset),
+[2017-12-31 07:47] [ALPM-SCRIPTLET] 	LANG = "en_US.UTF-8"
+[2017-12-31 07:47] [ALPM-SCRIPTLET]     are supported and installed on your system.
+[2017-12-31 07:47] [ALPM-SCRIPTLET] perl: warning: Falling back to the standard locale ("C").
+[2017-12-31 07:47] [ALPM] running 'systemd-sysusers.hook'...
+[2017-12-31 07:47] [ALPM] running 'systemd-update.hook'...
+[2017-12-31 07:55] [PACMAN] Running 'pacman -S nvim'
+[2017-12-31 07:56] [PACMAN] Running 'pacman -S neovim'
+[2017-12-31 07:56] [ALPM] transaction started
+[2017-12-31 07:56] [ALPM] installed jemalloc (1:5.0.1-3)
+[2017-12-31 07:56] [ALPM] installed unibilium (1.2.1-1)
+[2017-12-31 07:56] [ALPM] installed libtermkey (0.20-1)
+[2017-12-31 07:56] [ALPM] installed libuv (1.18.0-1)
+[2017-12-31 07:56] [ALPM] installed msgpack-c (2.1.5-1)
+[2017-12-31 07:56] [ALPM] installed libvterm (0.1.git1.c4317a6-2)
+[2017-12-31 07:56] [ALPM] installed luajit (2.0.5-1)
+[2017-12-31 07:57] [ALPM] installed neovim (0.2.2-1)
+[2017-12-31 07:57] [ALPM-SCRIPTLET] :: The Neovim executable is called 'nvim'.
+[2017-12-31 07:57] [ALPM-SCRIPTLET] :: If you are already familiar with Vim, see ':help nvim-from-vim'
+[2017-12-31 07:57] [ALPM-SCRIPTLET]    to get started.
+[2017-12-31 07:57] [ALPM-SCRIPTLET] :: If you have any questions, check the following page first:
+[2017-12-31 07:57] [ALPM-SCRIPTLET]    https://github.com/neovim/neovim/wiki/FAQ
+[2017-12-31 07:57] [ALPM] transaction completed
+[2017-12-31 07:57] [ALPM] running 'systemd-update.hook'...

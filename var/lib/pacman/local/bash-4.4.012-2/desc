@@ -1,0 +1,47 @@
+%NAME%
+bash
+
+%VERSION%
+4.4.012-2
+
+%DESC%
+The GNU Bourne Again shell
+
+%URL%
+http://www.gnu.org/software/bash/bash.html
+
+%ARCH%
+x86_64
+
+%BUILDDATE%
+1487078211
+
+%INSTALLDATE%
+1514690873
+
+%PACKAGER%
+Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
+
+%SIZE%
+7478272
+
+%GROUPS%
+base
+
+%LICENSE%
+GPL
+
+%VALIDATION%
+pgp
+
+%DEPENDS%
+readline>=7.0
+glibc
+ncurses
+
+%OPTDEPENDS%
+bash-completion: for tab completion
+
+%PROVIDES%
+sh
+

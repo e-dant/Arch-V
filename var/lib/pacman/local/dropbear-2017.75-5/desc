@@ -1,0 +1,36 @@
+%NAME%
+dropbear
+
+%VERSION%
+2017.75-5
+
+%BASE%
+dropbear
+
+%DESC%
+Lightweight SSH server
+
+%URL%
+https://matt.ucc.asn.au/dropbear/dropbear.html
+
+%ARCH%
+x86_64
+
+%BUILDDATE%
+1510303674
+
+%INSTALLDATE%
+1514704753
+
+%PACKAGER%
+Alexander Rødseth <rodseth@gmail.com>
+
+%SIZE%
+975872
+
+%LICENSE%
+MIT
+
+%VALIDATION%
+pgp
+

@@ -1,0 +1,36 @@
+%NAME%
+libvterm
+
+%VERSION%
+0.1.git1.c4317a6-2
+
+%DESC%
+Abstract library implementation of a VT220/xterm/ECMA-48 terminal emulator
+
+%URL%
+http://www.leonerd.org.uk/code/libvterm
+
+%ARCH%
+x86_64
+
+%BUILDDATE%
+1446486231
+
+%INSTALLDATE%
+1514707019
+
+%PACKAGER%
+Sven-Hendrik Haase <sh@lutzhaase.com>
+
+%SIZE%
+143360
+
+%REASON%
+1
+
+%LICENSE%
+MIT
+
+%VALIDATION%
+pgp
+

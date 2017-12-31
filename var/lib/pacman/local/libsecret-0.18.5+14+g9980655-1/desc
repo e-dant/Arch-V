@@ -1,0 +1,43 @@
+%NAME%
+libsecret
+
+%VERSION%
+0.18.5+14+g9980655-1
+
+%DESC%
+Library for storing and retrieving passwords and other secrets
+
+%URL%
+https://wiki.gnome.org/Projects/Libsecret
+
+%ARCH%
+x86_64
+
+%BUILDDATE%
+1491416367
+
+%INSTALLDATE%
+1514690980
+
+%PACKAGER%
+Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
+
+%SIZE%
+1929216
+
+%REASON%
+1
+
+%LICENSE%
+LGPL
+
+%VALIDATION%
+pgp
+
+%DEPENDS%
+glib2
+libgcrypt
+
+%OPTDEPENDS%
+gnome-keyring: key storage service (or use any other service implementing org.freedesktop.secrets)
+

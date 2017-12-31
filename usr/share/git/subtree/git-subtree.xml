@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+<refentry>
+<refmeta>
+<refentrytitle>git-subtree</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class="source">Git</refmiscinfo>
+<refmiscinfo class="version">2.15.1</refmiscinfo>
+<refmiscinfo class="manual">Git Manual</refmiscinfo>
+</refmeta>
+<refnamediv>
+  <refname>git-subtree</refname>
+  <refpurpose>Merge subtrees together and split repository into subtrees</refpurpose>
+</refnamediv>
+<refsynopsisdiv id="_synopsis">
+<blockquote>
+<literallayout><emphasis>git subtree</emphasis> add   -P &lt;prefix&gt; &lt;commit&gt;
+<emphasis>git subtree</emphasis> add   -P &lt;prefix&gt; &lt;repository&gt; &lt;ref&gt;
+<emphasis>git subtree</emphasis> pull  -P &lt;prefix&gt; &lt;repository&gt; &lt;ref&gt;
+<emphasis>git subtree</emphasis> push  -P &lt;prefix&gt; &lt;repository&gt; &lt;ref&gt;
+<emphasis>git subtree</emphasis> merge -P &lt;prefix&gt; &lt;commit&gt;
+<emphasis>git subtree</emphasis> split -P &lt;prefix&gt; [OPTIONS] [&lt;commit&gt;]</literallayout>
+</blockquote>
+</refsynopsisdiv>
+<refsect1 id="_description">
+<title>DESCRIPTION</title>
+<simpara>Subtrees allow subprojects to be included within a subdirectory
+of the main project, optionally including the subproject&#8217;s
+entire history.</simpara>
+<simpara>For example, you could include the source code for a library
+as a subdirectory of your application.</simpara>
+<simpara>Subtrees are not to be confused with submodules, which are meant for
+the same task. Unlike submodules, subtrees do not need any special
+constructions (like .gitmodule files or gitlinks) be present in
+your repository, and do not force end-users of your
+repository to do anything special or to understand how subtrees
+work. A subtree is just a subdirectory that can be
+committed to, branched, and merged along with your project in
+any way you want.</simpara>
+<simpara>They are also not to be confused with using the subtree merge
+strategy. The main difference is that, besides merging
+the other project as a subdirectory, you can also extract the
+entire history of a subdirectory from your project and make it
+into a standalone project. Unlike the subtree merge strategy
+you can alternate back and forth between these
+two operations. If the standalone library gets updated, you can
+automatically merge the changes into your project; if you
+update the library inside your project, you can "split" the
+changes back out again and merge them back into the library
+project.</simpara>
+<simpara>For example, if a library you made for one application ends up being
+useful elsewhere, you can extract its entire history and publish
+that as its own git repository, without accidentally
+intermingling the history of your application project.</simpara>
+<tip><simpara>In order to keep your commit messages clean, we recommend that
+people split their commits between the subtrees and the main
+project as much as possible.  That is, if you make a change that
+affects both the library and the main application, commit it in
+two pieces.  That way, when you split the library commits out
+later, their descriptions will still make sense.  But if this
+isn&#8217;t important to you, it&#8217;s not <emphasis role="strong">necessary</emphasis>.  git subtree will
+simply leave out the non-library-related parts of the commit
+when it splits it out into the subproject later.</simpara></tip>
+</refsect1>
+<refsect1 id="_commands">
+<title>COMMANDS</title>
+<variablelist>
+<varlistentry>
+<term>
+add
+</term>
+<listitem>
+<simpara>
+        Create the &lt;prefix&gt; subtree by importing its contents
+        from the given &lt;commit&gt; or &lt;repository&gt; and remote &lt;ref&gt;.
+        A new commit is created automatically, joining the imported
+        project&#8217;s history with your own.  With <emphasis>--squash</emphasis>, imports
+        only a single commit from the subproject, rather than its
+        entire history.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+merge
+</term>
+<listitem>
+<simpara>
+        Merge recent changes up to &lt;commit&gt; into the &lt;prefix&gt;
+        subtree.  As with normal <emphasis>git merge</emphasis>, this doesn&#8217;t
+        remove your own local changes; it just merges those
+        changes into the latest &lt;commit&gt;.  With <emphasis>--squash</emphasis>,
+        creates only one commit that contains all the changes,
+        rather than merging in the entire history.
+</simpara>
+<simpara>If you use <emphasis>--squash</emphasis>, the merge direction doesn&#8217;t always have to be
+forward; you can use this command to go back in time from v2.5 to v2.4,
+for example.  If your merge introduces a conflict, you can resolve it in
+the usual ways.</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+pull
+</term>
+<listitem>
+<simpara>
+        Exactly like <emphasis>merge</emphasis>, but parallels <emphasis>git pull</emphasis> in that
+        it fetches the given ref from the specified remote
+        repository.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+push
+</term>
+<listitem>
+<simpara>
+        Does a <emphasis>split</emphasis> (see below) using the &lt;prefix&gt; supplied
+        and then does a <emphasis>git push</emphasis> to push the result to the
+        repository and ref. This can be used to push your
+        subtree to different branches of the remote repository.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+split
+</term>
+<listitem>
+<simpara>
+        Extract a new, synthetic project history from the
+        history of the &lt;prefix&gt; subtree.  The new history
+        includes only the commits (including merges) that
+        affected &lt;prefix&gt;, and each of those commits now has the
+        contents of &lt;prefix&gt; at the root of the project instead
+        of in a subdirectory.  Thus, the newly created history
+        is suitable for export as a separate git repository.
+</simpara>
+<simpara>After splitting successfully, a single commit id is printed to stdout.
+This corresponds to the HEAD of the newly created tree, which you can
+manipulate however you want.</simpara>
+<simpara>Repeated splits of exactly the same history are guaranteed to be
+identical (i.e. to produce the same commit ids).  Because of this, if
+you add new commits and then re-split, the new commits will be attached
+as commits on top of the history you generated last time, so <emphasis>git merge</emphasis>
+and friends will work as expected.</simpara>
+<simpara>Note that if you use <emphasis>--squash</emphasis> when you merge, you should usually not
+just <emphasis>--rejoin</emphasis> when you split.</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</refsect1>
+<refsect1 id="_options">
+<title>OPTIONS</title>
+<variablelist>
+<varlistentry>
+<term>
+-q
+</term>
+<term>
+--quiet
+</term>
+<listitem>
+<simpara>
+        Suppress unnecessary output messages on stderr.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+-d
+</term>
+<term>
+--debug
+</term>
+<listitem>
+<simpara>
+        Produce even more unnecessary output messages on stderr.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+-P &lt;prefix&gt;
+</term>
+<term>
+--prefix=&lt;prefix&gt;
+</term>
+<listitem>
+<simpara>
+        Specify the path in the repository to the subtree you
+        want to manipulate.  This option is mandatory
+        for all commands.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+-m &lt;message&gt;
+</term>
+<term>
+--message=&lt;message&gt;
+</term>
+<listitem>
+<simpara>
+        This option is only valid for add, merge and pull (unsure).
+        Specify &lt;message&gt; as the commit message for the merge commit.
+</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</refsect1>
+<refsect1 id="_options_for_add_merge_push_pull">
+<title>OPTIONS FOR add, merge, push, pull</title>
+<variablelist>
+<varlistentry>
+<term>
+--squash
+</term>
+<listitem>
+<simpara>
+        This option is only valid for add, merge, and pull
+        commands.
+</simpara>
+<simpara>Instead of merging the entire history from the subtree project, produce
+only a single commit that contains all the differences you want to
+merge, and then merge that new commit into your project.</simpara>
+<simpara>Using this option helps to reduce log clutter. People rarely want to see
+every change that happened between v1.0 and v1.1 of the library they&#8217;re
+using, since none of the interim versions were ever included in their
+application.</simpara>
+<simpara>Using <emphasis>--squash</emphasis> also helps avoid problems when the same subproject is
+included multiple times in the same project, or is removed and then
+re-added.  In such a case, it doesn&#8217;t make sense to combine the
+histories anyway, since it&#8217;s unclear which part of the history belongs
+to which subtree.</simpara>
+<simpara>Furthermore, with <emphasis>--squash</emphasis>, you can switch back and forth between
+different versions of a subtree, rather than strictly forward.  <emphasis>git
+subtree merge --squash</emphasis> always adjusts the subtree to match the exactly
+specified commit, even if getting to that commit would require undoing
+some changes that were added earlier.</simpara>
+<simpara>Whether or not you use <emphasis>--squash</emphasis>, changes made in your local repository
+remain intact and can be later split and send upstream to the
+subproject.</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</refsect1>
+<refsect1 id="_options_for_split">
+<title>OPTIONS FOR split</title>
+<variablelist>
+<varlistentry>
+<term>
+--annotate=&lt;annotation&gt;
+</term>
+<listitem>
+<simpara>
+        This option is only valid for the split command.
+</simpara>
+<simpara>When generating synthetic history, add &lt;annotation&gt; as a prefix to each
+commit message.  Since we&#8217;re creating new commits with the same commit
+message, but possibly different content, from the original commits, this
+can help to differentiate them and avoid confusion.</simpara>
+<simpara>Whenever you split, you need to use the same &lt;annotation&gt;, or else you
+don&#8217;t have a guarantee that the new re-created history will be identical
+to the old one.  That will prevent merging from working correctly.  git
+subtree tries to make it work anyway, particularly if you use --rejoin,
+but it may not always be effective.</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+-b &lt;branch&gt;
+</term>
+<term>
+--branch=&lt;branch&gt;
+</term>
+<listitem>
+<simpara>
+        This option is only valid for the split command.
+</simpara>
+<simpara>After generating the synthetic history, create a new branch called
+&lt;branch&gt; that contains the new history.  This is suitable for immediate
+pushing upstream.  &lt;branch&gt; must not already exist.</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+--ignore-joins
+</term>
+<listitem>
+<simpara>
+        This option is only valid for the split command.
+</simpara>
+<simpara>If you use <emphasis>--rejoin</emphasis>, git subtree attempts to optimize its history
+reconstruction to generate only the new commits since the last
+<emphasis>--rejoin</emphasis>.  <emphasis>--ignore-join</emphasis> disables this behaviour, forcing it to
+regenerate the entire history.  In a large project, this can take a long
+time.</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+--onto=&lt;onto&gt;
+</term>
+<listitem>
+<simpara>
+        This option is only valid for the split command.
+</simpara>
+<simpara>If your subtree was originally imported using something other than git
+subtree, its history may not match what git subtree is expecting.  In
+that case, you can specify the commit id &lt;onto&gt; that corresponds to the
+first revision of the subproject&#8217;s history that was imported into your
+project, and git subtree will attempt to build its history from there.</simpara>
+<simpara>If you used <emphasis>git subtree add</emphasis>, you should never need this option.</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+--rejoin
+</term>
+<listitem>
+<simpara>
+        This option is only valid for the split command.
+</simpara>
+<simpara>After splitting, merge the newly created synthetic history back into
+your main project.  That way, future splits can search only the part of
+history that has been added since the most recent --rejoin.</simpara>
+<simpara>If your split commits end up merged into the upstream subproject, and
+then you want to get the latest upstream version, this will allow git&#8217;s
+merge algorithm to more intelligently avoid conflicts (since it knows
+these synthetic commits are already part of the upstream repository).</simpara>
+<simpara>Unfortunately, using this option results in <emphasis>git log</emphasis> showing an extra
+copy of every new commit that was created (the original, and the
+synthetic one).</simpara>
+<simpara>If you do all your merges with <emphasis>--squash</emphasis>, don&#8217;t use <emphasis>--rejoin</emphasis> when you
+split, because you don&#8217;t want the subproject&#8217;s history to be part of
+your project anyway.</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</refsect1>
+<refsect1 id="_example_1_add_command">
+<title>EXAMPLE 1. Add command</title>
+<simpara>Let&#8217;s assume that you have a local repository that you would like
+to add an external vendor library to. In this case we will add the
+git-subtree repository as a subdirectory of your already existing
+git-extensions repository in ~/git-extensions/:</simpara>
+<literallayout class="monospaced">$ git subtree add --prefix=git-subtree --squash \
+        git://github.com/apenwarr/git-subtree.git master</literallayout>
+<simpara><emphasis>master</emphasis> needs to be a valid remote ref and can be a different branch
+name</simpara>
+<simpara>You can omit the --squash flag, but doing so will increase the number
+of commits that are included in your local repository.</simpara>
+<simpara>We now have a ~/git-extensions/git-subtree directory containing code
+from the master branch of git://github.com/apenwarr/git-subtree.git
+in our git-extensions repository.</simpara>
+</refsect1>
+<refsect1 id="_example_2_extract_a_subtree_using_commit_merge_and_pull">
+<title>EXAMPLE 2. Extract a subtree using commit, merge and pull</title>
+<simpara>Let&#8217;s use the repository for the git source code as an example.
+First, get your own copy of the git.git repository:</simpara>
+<literallayout class="monospaced">$ git clone git://git.kernel.org/pub/scm/git/git.git test-git
+$ cd test-git</literallayout>
+<simpara>gitweb (commit 1130ef3) was merged into git as of commit
+0a8f4f0, after which it was no longer maintained separately.
+But imagine it had been maintained separately, and we wanted to
+extract git&#8217;s changes to gitweb since that time, to share with
+the upstream.  You could do this:</simpara>
+<literallayout class="monospaced">$ git subtree split --prefix=gitweb --annotate='(split) ' \
+        0a8f4f0^.. --onto=1130ef3 --rejoin \
+        --branch gitweb-latest
+$ gitk gitweb-latest
+$ git push git@github.com:whatever/gitweb.git gitweb-latest:master</literallayout>
+<simpara>(We use <emphasis>0a8f4f0^..</emphasis> because that means "all the changes from
+0a8f4f0 to the current version, including 0a8f4f0 itself.")</simpara>
+<simpara>If gitweb had originally been merged using <emphasis>git subtree add</emphasis> (or
+a previous split had already been done with --rejoin specified)
+then you can do all your splits without having to remember any
+weird commit ids:</simpara>
+<literallayout class="monospaced">$ git subtree split --prefix=gitweb --annotate='(split) ' --rejoin \
+        --branch gitweb-latest2</literallayout>
+<simpara>And you can merge changes back in from the upstream project just
+as easily:</simpara>
+<literallayout class="monospaced">$ git subtree pull --prefix=gitweb \
+        git@github.com:whatever/gitweb.git master</literallayout>
+<simpara>Or, using <emphasis>--squash</emphasis>, you can actually rewind to an earlier
+version of gitweb:</simpara>
+<literallayout class="monospaced">$ git subtree merge --prefix=gitweb --squash gitweb-latest~10</literallayout>
+<simpara>Then make some changes:</simpara>
+<literallayout class="monospaced">$ date &gt;gitweb/myfile
+$ git add gitweb/myfile
+$ git commit -m 'created myfile'</literallayout>
+<simpara>And fast forward again:</simpara>
+<literallayout class="monospaced">$ git subtree merge --prefix=gitweb --squash gitweb-latest</literallayout>
+<simpara>And notice that your change is still intact:</simpara>
+<literallayout class="monospaced">$ ls -l gitweb/myfile</literallayout>
+<simpara>And you can split it out and look at your changes versus
+the standard gitweb:</simpara>
+<literallayout class="monospaced">git log gitweb-latest..$(git subtree split --prefix=gitweb)</literallayout>
+</refsect1>
+<refsect1 id="_example_3_extract_a_subtree_using_branch">
+<title>EXAMPLE 3. Extract a subtree using branch</title>
+<simpara>Suppose you have a source directory with many files and
+subdirectories, and you want to extract the lib directory to its own
+git project. Here&#8217;s a short way to do it:</simpara>
+<simpara>First, make the new repository wherever you want:</simpara>
+<literallayout class="monospaced">$ &lt;go to the new location&gt;
+$ git init --bare</literallayout>
+<simpara>Back in your original directory:</simpara>
+<literallayout class="monospaced">$ git subtree split --prefix=lib --annotate="(split)" -b split</literallayout>
+<simpara>Then push the new branch onto the new empty repository:</simpara>
+<literallayout class="monospaced">$ git push &lt;new-repo&gt; split:master</literallayout>
+</refsect1>
+<refsect1 id="_author">
+<title>AUTHOR</title>
+<simpara>Written by Avery Pennarun &lt;<ulink url="mailto:apenwarr@gmail.com">apenwarr@gmail.com</ulink>&gt;</simpara>
+</refsect1>
+<refsect1 id="_git">
+<title>GIT</title>
+<simpara>Part of the <citerefentry>
+<refentrytitle>git</refentrytitle><manvolnum>1</manvolnum>
+</citerefentry> suite</simpara>
+</refsect1>
+</refentry>

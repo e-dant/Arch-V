@@ -1,0 +1,49 @@
+%NAME%
+dkms
+
+%VERSION%
+2.5-1
+
+%DESC%
+Dynamic Kernel Modules System
+
+%URL%
+https://github.com/dell/dkms
+
+%ARCH%
+any
+
+%BUILDDATE%
+1512902892
+
+%INSTALLDATE%
+1514691944
+
+%PACKAGER%
+Sébastien Luttringer <seblu@seblu.net>
+
+%SIZE%
+172032
+
+%REASON%
+1
+
+%LICENSE%
+GPL2
+
+%VALIDATION%
+pgp
+
+%DEPENDS%
+bash
+kmod
+gcc
+make
+patch
+
+%OPTDEPENDS%
+linux-headers: build modules against the Arch kernel
+linux-lts-headers: build modules against the LTS kernel
+linux-zen-headers: build modules against the ZEN kernel
+linux-hardened-headers: build modules against the HARDENED kernel
+

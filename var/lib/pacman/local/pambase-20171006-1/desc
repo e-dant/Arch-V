@@ -1,0 +1,36 @@
+%NAME%
+pambase
+
+%VERSION%
+20171006-1
+
+%DESC%
+Base PAM configuration for services
+
+%URL%
+http://www.archlinux.org
+
+%ARCH%
+any
+
+%BUILDDATE%
+1507294834
+
+%INSTALLDATE%
+1514690896
+
+%PACKAGER%
+Christian Hesse <arch@eworm.de>
+
+%SIZE%
+3072
+
+%REASON%
+1
+
+%LICENSE%
+GPL
+
+%VALIDATION%
+pgp
+

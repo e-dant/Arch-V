@@ -1,0 +1,64 @@
+%NAME%
+git
+
+%VERSION%
+2.15.1-2
+
+%DESC%
+the fast distributed version control system
+
+%URL%
+http://git-scm.com/
+
+%ARCH%
+x86_64
+
+%BUILDDATE%
+1513158508
+
+%INSTALLDATE%
+1514706456
+
+%PACKAGER%
+Christian Hesse <arch@eworm.de>
+
+%SIZE%
+36183040
+
+%LICENSE%
+GPL2
+
+%VALIDATION%
+pgp
+
+%REPLACES%
+git-core
+
+%DEPENDS%
+curl
+expat>=2.0
+perl-error
+perl>=5.14.0
+openssl
+pcre2
+grep
+shadow
+
+%OPTDEPENDS%
+tk: gitk and git gui
+perl-libwww: git svn
+perl-term-readkey: git svn
+perl-mime-tools: git send-email
+perl-net-smtp-ssl: git send-email TLS support
+perl-authen-sasl: git send-email TLS support
+perl-mediawiki-api: git mediawiki support
+perl-datetime-format-iso8601: git mediawiki support
+perl-lwp-protocol-https: git mediawiki https support
+perl-cgi: gitweb (web interface) support
+python2: various helper scripts
+subversion: git svn
+gnome-keyring: GNOME keyring credential helper
+
+%PROVIDES%
+git-core
+

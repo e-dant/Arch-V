@@ -1,0 +1,1 @@
+#define UTS_RELEASE "4.14.9-1-ARCH"

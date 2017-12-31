@@ -1,0 +1,36 @@
+#!/bin/sh
+
+prefix="/usr"
+exec_prefix="${prefix}"
+VERSION="1.7.0"
+CFLAGS="-Wunused-function -Wstrict-prototypes -Wwrite-strings -W -Wall -march=x86-64 -mtune=generic -O2 -pipe -fstack-protector-strong -fno-plt"
+CPPFLAGS="-D_FORTIFY_SOURCE=2  "
+LDFLAGS="-Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now  "
+LIBS="  -lcrypto -lssl"
+LIBDIR="${exec_prefix}/lib"
+INCLUDEDIR="${prefix}/include"
+LIBVERSION="2:0:0"
+
+for arg in $@
+do
+    if [ $arg = "--cflags" ]
+    then
+        echo "-I${INCLUDEDIR}"
+    fi
+    if [ $arg = "--libs" ]
+    then
+        echo "${LDFLAGS} -L${LIBDIR} ${LIBS} -lldns"
+    fi
+    if [ $arg = "-h" ] || [ $arg = "--help" ]
+    then
+        echo "Usage: $0 [--cflags] [--libs] [--version]"
+    fi
+    if [ $arg = "--version" ]
+    then
+        echo "${VERSION}"
+    fi
+    if [ $arg = "--libversion" ]
+    then
+        echo "${LIBVERSION}"
+    fi
+done
